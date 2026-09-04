@@ -3,8 +3,12 @@
   "clangd.arguments": [
     "--background-index",
     "--query-driver=**",
-    "--compile-commands-dir=c:\\Users\\gusbe\\esp\\tareasrtos\\build"
+    "--compile-commands-dir=c:\\Users\\gusbe\\itsur\\repos-clase\\SE3A-INT.D-LAS-COSAS-AD2026\\tareasrtos\\build"
   ],
   "idf.flashType": "UART",
-  "idf.portWin": "COM4"
+  "idf.portWin": "COM4",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32c6"
+  },
+  "idf.currentSetup": "C:\\esp\\v6.1\\esp-idf"
 }
