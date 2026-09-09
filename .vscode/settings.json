@@ -1,3 +1,17 @@
 {
-    "cmake.ignoreCMakeListsMissing": true
+  "cmake.ignoreCMakeListsMissing": true,
+  "idf.customExtraVars": {
+    "OPENOCD_USB_ADAPTER_LOCATION": "1-1"
+  },
+  "idf.flashType": "JTAG",
+  "idf.portWin": "COM5",
+  "idf.openOcdConfigs": [
+    "board/esp32c6-builtin.cfg"
+  ],
+  "clangd.path": "C:\\Espressif\\tools\\esp-clangd\\esp-21.1.3_20260408\\esp-clangd\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=c:\\Users\\gusbe\\itsur\\repos-clase\\SE3A-INT.D-LAS-COSAS-AD2026\\build"
+  ]
 }
