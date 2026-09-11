@@ -29,6 +29,7 @@ void app_main(void) {
         ESP_ERROR_CHECK(adc_oneshot_read(adc1_handle, EJEMPLO_ADC_GPIO, &raw_value));
         
         printf("Valor ADC leído: %d\n", raw_value);
+        printf("Voltaje ADC leído: %.2f V\n", raw_value * 3.3 / 4095.0);
 
         // Esperar 1 segundo
         vTaskDelay(pdMS_TO_TICKS(1000));
