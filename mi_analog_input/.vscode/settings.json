@@ -1,6 +1,5 @@
 {
   "idf.customExtraVars": {
-    "OPENOCD_USB_ADAPTER_LOCATION": "1-1",
     "IDF_TARGET": "esp32c6"
   },
   "idf.currentSetup": "C:\\esp\\v6.1\\esp-idf",
@@ -8,11 +7,8 @@
   "clangd.arguments": [
     "--background-index",
     "--query-driver=**",
-    "--compile-commands-dir=c:\\Users\\gusbe\\itsur\\repos-clase\\SE3A-INT.D-LAS-COSAS-AD2026\\gpio-ejemplo\\build"
+    "--compile-commands-dir=c:\\Users\\gusbe\\itsur\\repos-clase\\SE3A-INT.D-LAS-COSAS-AD2026\\mi_analog_input\\build"
   ],
-  "idf.flashType": "UART",
-  "idf.portWin": "COM3",
-  "idf.openOcdConfigs": [
-    "board/esp32c6-builtin.cfg"
-  ]
+  "idf.portWin": "COM4",
+  "idf.flashType": "UART"
 }
