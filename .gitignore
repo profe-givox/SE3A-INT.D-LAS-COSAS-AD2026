@@ -72,3 +72,37 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# El directorio donde se compila el proyecto y se generan los binarios
+build/
+
+# Archivos de configuración local generados por la compilación (contienen rutas absolutas de tu PC)
+sdkconfig.old
+sdkconfig.v7
+
+# Dependencias gestionadas automáticamente (si usas el administrador de componentes de ESP-IDF)
+managed_components/
+dependencies.lock
+
+# Archivos temporales o de configuración del sistema de compilación
+.kconfig.d
+
+# Configuración de entornos de desarrollo (IDE)
+# VS Code
+.vscode/
+# Si quieres guardar las tareas y configuraciones de VS Code pero no el estado de las herramientas:
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+
+# Eclipse / Espressif IDE
+.settings/
+.project
+.cproject
+
+# Archivos temporales de Editores de Texto y del Sistema Operativo
+*~
+.*.swp
+.DS_Store
+Thumbs.db
