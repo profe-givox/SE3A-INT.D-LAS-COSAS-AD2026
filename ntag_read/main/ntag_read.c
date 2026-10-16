@@ -131,11 +131,16 @@ void app_main()
                 continue; // Si falla, ignora el resto del código y vuelve a buscar tarjetas
             }
 
+            ESP_LOGI(TAG, "Paso ID tarjeta seleccionada paraoperar!");
+            vTaskDelay(100 / portTICK_PERIOD_MS); // Pausa de 100 ms para que la tarjeta se estabilice
             // Variable para identificar qué modelo exacto de NTAG es
             NTAG2XX_MODEL ntag_model = NTAG2XX_UNKNOWN;
             err = ntag2xx_get_model(&pn532_io, &ntag_model);
-            if (err != ESP_OK)
-                continue; // Si no puede identificar el modelo, vuelve a empezar el bucle
+            if (err != ESP_OK){
+                ESP_LOGI(TAG, "Failed to get NTAG model");
+                continue; // Si falla, ignora el resto del código y vuelve a buscar tarjetas
+            }
+                
 
             int page_max; // Guardará el número máximo de páginas de memoria que tiene la tarjeta
             
@@ -160,7 +165,7 @@ void app_main()
                     ESP_LOGI(TAG, "Found unknown NTAG target!");
                     continue; // Modelo desconocido, vuelve al inicio a buscar otra tarjeta
             }
-
+            ESP_LOGI(TAG, "Paso ID tarjeta!");
             // BUCLE DE LECTURA: Lee la tarjeta completa de 4 en 4 páginas (bloques de 16 bytes)
             for(int page=0; page < page_max; page+=4) {
                 uint8_t buf[16]; // Espacio temporal para guardar los 16 bytes leídos
