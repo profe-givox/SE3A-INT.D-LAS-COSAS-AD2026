@@ -35,15 +35,15 @@ static esp_err_t api_get_handler(httpd_req_t *req) {
       char param[3];
       if (httpd_query_key_value(buf, "r", param, sizeof(param)) == ESP_OK) {
         led_r = atoi(param);
-        printf("r: %d\n", led_r);
+        printf("r: %ld\n", led_r);
       }
       if (httpd_query_key_value(buf, "g", param, sizeof(param)) == ESP_OK) {
         led_g = atoi(param);
-        printf("g: %d\n", led_g);
+        printf("g: %ld\n", led_g);
       }
       if (httpd_query_key_value(buf, "b", param, sizeof(param)) == ESP_OK) {
         led_b = atoi(param);
-        printf("b: %d\n", led_b);
+        printf("b: %ld\n", led_b);
       }
     }
     free(buf);
@@ -59,7 +59,7 @@ static esp_err_t api_get_handler(httpd_req_t *req) {
   httpd_resp_set_hdr(req, "Content-Type", "application/json");
 
   char res[30];
-  sprintf(res, "{ \"r\": %d, \"g\": %d, \"b\": %d }", led_r, led_g, led_b);
+  sprintf(res, "{ \"r\": %ld, \"g\": %ld, \"b\": %ld }", led_r, led_g, led_b);
   httpd_resp_send(req, res, HTTPD_RESP_USE_STRLEN);
   return ESP_OK;
 }
